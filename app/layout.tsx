@@ -1,30 +1,30 @@
-import "../global.css";
-import { Inter } from "@next/font/google";
-import LocalFont from "@next/font/local";
-import { Metadata } from "next";
-import { Analytics } from "./components/analytics";
+import '../global.css';
+import { Inter } from '@next/font/google';
+import LocalFont from '@next/font/local';
+import type { Metadata } from 'next';
+import { Analytics } from './components/analytics';
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://naktor.com'),
   title: {
-    default: "chronark.com",
-    template: "%s | chronark.com",
+    default: 'naktor.com',
+    template: '%s | naktor.com',
   },
-  description: "Co-founder of unkey.dev and founder of planetfall.io",
+  description: 'Personal website and portfolio',
   openGraph: {
-    title: "chronark.com",
-    description:
-      "Co-founder of unkey.dev and founder of planetfall.io",
-    url: "https://chronark.com",
-    siteName: "chronark.com",
+    title: 'naktor.com',
+    description: 'Personal website and portfolio',
+    url: 'https://naktor.com',
+    siteName: 'naktor.com',
     images: [
       {
-        url: "https://chronark.com/og.png",
+        url: 'https://naktor.com/og.png',
         width: 1920,
         height: 1080,
       },
     ],
-    locale: "en-US",
-    type: "website",
+    locale: 'en-US',
+    type: 'website',
   },
   robots: {
     index: true,
@@ -32,27 +32,27 @@ export const metadata: Metadata = {
     googleBot: {
       index: true,
       follow: true,
-      "max-video-preview": -1,
-      "max-image-preview": "large",
-      "max-snippet": -1,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
     },
   },
   twitter: {
-    title: "Chronark",
-    card: "summary_large_image",
+    title: 'Naktor',
+    card: 'summary_large_image',
   },
   icons: {
-    shortcut: "/favicon.png",
+    shortcut: '/favicon.png',
   },
 };
 const inter = Inter({
-  subsets: ["latin"],
-  variable: "--font-inter",
+  subsets: ['latin'],
+  variable: '--font-inter',
 });
 
 const calSans = LocalFont({
-  src: "../public/fonts/CalSans-SemiBold.ttf",
-  variable: "--font-calsans",
+  src: '../public/fonts/CalSans-SemiBold.ttf',
+  variable: '--font-calsans',
 });
 
 export default function RootLayout({
@@ -61,13 +61,14 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={[inter.variable, calSans.variable].join(" ")}>
+    <html className={[inter.variable, calSans.variable].join(' ')} lang="en">
       <head>
         <Analytics />
       </head>
       <body
-        className={`bg-black ${process.env.NODE_ENV === "development" ? "debug-screens" : undefined
-          }`}
+        className={`bg-black ${
+          process.env.NODE_ENV === 'development' ? 'debug-screens' : undefined
+        }`}
       >
         {children}
       </body>
