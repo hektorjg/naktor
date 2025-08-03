@@ -17,7 +17,7 @@ export const Card: React.FC<PropsWithChildren> = ({ children }) => {
     mouseX.set(clientX - left);
     mouseY.set(clientY - top);
   }
-  const maskImage = useMotionTemplate`radial-gradient(240px at ${mouseX}px ${mouseY}px, white, transparent)`;
+  const maskImage = useMotionTemplate`radial-gradient(120px at ${mouseX}px ${mouseY}px, white, rgba(255,255,255,0.3), transparent)`;
   const style = { maskImage, WebkitMaskImage: maskImage };
 
   return (
@@ -28,11 +28,11 @@ export const Card: React.FC<PropsWithChildren> = ({ children }) => {
       <div className="pointer-events-none">
         <div className="absolute inset-0 z-0 transition duration-1000 [mask-image:linear-gradient(black,transparent)]" />
         <motion.div
-          className="absolute inset-0 z-10 bg-gradient-to-br via-zinc-100/10 opacity-100 transition duration-1000 group-hover:opacity-50 "
+          className="absolute inset-0 z-10 bg-gradient-to-br via-zinc-100/10 opacity-50 transition duration-1000 group-hover:opacity-30 "
           style={style}
         />
         <motion.div
-          className="absolute inset-0 z-10 opacity-0 mix-blend-overlay transition duration-1000 group-hover:opacity-100"
+          className="absolute inset-0 z-10 opacity-0 mix-blend-overlay transition duration-1000 group-hover:opacity-30"
           style={style}
         />
       </div>

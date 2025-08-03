@@ -1,4 +1,4 @@
-import { allProjects } from 'contentlayer/generated';
+import { getAllProjects } from '@/lib/projects';
 import Link from 'next/link';
 import React from 'react';
 import { Card } from '../components/card';
@@ -7,9 +7,10 @@ import { Article } from './article';
 
 export const revalidate = 60;
 export default async function ProjectsPage() {
-  const featured = allProjects.find((project) => project.slug === 'unkey')!;
-  const top2 = allProjects.find((project) => project.slug === 'planetfall')!;
-  const top3 = allProjects.find((project) => project.slug === 'highstorm')!;
+  const allProjects = getAllProjects();
+  const featured = allProjects.find((project) => project.slug === 'unkey') || allProjects[0];
+  const top2 = allProjects.find((project) => project.slug === 'planetfall') || allProjects[1];
+  const top3 = allProjects.find((project) => project.slug === 'highstorm') || allProjects[2];
   const sorted = allProjects
     .filter((p) => p.published)
     .filter(

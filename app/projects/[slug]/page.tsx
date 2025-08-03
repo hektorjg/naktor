@@ -1,4 +1,4 @@
-import { allProjects } from 'contentlayer/generated';
+import { getAllProjects, getProject } from '@/lib/projects';
 import { notFound } from 'next/navigation';
 import { Mdx } from '@/app/components/mdx';
 import { Header } from './header';
@@ -7,12 +7,13 @@ import './mdx.css';
 export const revalidate = 60;
 
 type Props = {
-  params: {
+  params: Promise<{
     slug: string;
-  };
+  }>;
 };
 
-export async function generateStaticParams(): Promise<Props['params'][]> {
+export async function generateStaticParams() {
+  const allProjects = getAllProjects();
   return allProjects
     .filter((p) => p.published)
     .map((p) => ({
@@ -21,8 +22,8 @@ export async function generateStaticParams(): Promise<Props['params'][]> {
 }
 
 export default async function PostPage({ params }: Props) {
-  const slug = params?.slug;
-  const project = allProjects.find((project) => project.slug === slug);
+  const { slug } = await params;
+  const project = getProject(slug);
 
   if (!project) {
     notFound();

@@ -1,7 +1,7 @@
 import '../global.css';
-import { Inter } from '@next/font/google';
-import LocalFont from '@next/font/local';
 import type { Metadata } from 'next';
+import { Inter } from 'next/font/google';
+import LocalFont from 'next/font/local';
 import { Analytics } from './components/analytics';
 
 export const metadata: Metadata = {
@@ -42,7 +42,8 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
   },
   icons: {
-    shortcut: '/favicon.png',
+    shortcut: '/favicon.ico',
+    icon: '/favicon.svg',
   },
 };
 const inter = Inter({

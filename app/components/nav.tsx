@@ -31,6 +31,12 @@ export const Navigation: React.FC = () => {
           <div className="flex justify-between gap-8">
             <Link
               className="text-zinc-400 duration-200 hover:text-zinc-100"
+              href="/projects"
+            >
+              Projects
+            </Link>
+            <Link
+              className="text-zinc-400 duration-200 hover:text-zinc-100"
               href="/products"
             >
               Products

@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import type { Project } from '@/.contentlayer/generated';
+import type { Project } from '@/lib/projects';
 
 type Props = {
   project: Project;

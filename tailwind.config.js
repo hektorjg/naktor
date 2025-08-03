@@ -10,6 +10,12 @@ module.exports = {
 
   theme: {
     extend: {
+      colors: {
+        naktor: {
+          primary: '#5b08e4',
+          secondary: '#e338fc',
+        },
+      },
       typography: {
         DEFAULT: {
           css: {
@@ -37,17 +43,18 @@ module.exports = {
           'radial-gradient(50% 50% at 50% 50%, var(--tw-gradient-stops))',
       },
       animation: {
-        'fade-in': 'fade-in 3s ease-in-out forwards',
-        title: 'title 3s ease-out forwards',
-        'fade-left': 'fade-left 3s ease-in-out forwards',
-        'fade-right': 'fade-right 3s ease-in-out forwards',
+        'fade-in': 'fade-in 1.5s ease-in-out forwards',
+        title: 'title 2s ease-out forwards',
+        'fade-left': 'fade-left 2s ease-in-out forwards',
+        'fade-right': 'fade-right 2s ease-in-out forwards',
+        glow: 'glow 2s ease-in-out infinite alternate',
       },
       keyframes: {
         'fade-in': {
           '0%': {
             opacity: '0%',
           },
-          '75%': {
+          '40%': {
             opacity: '0%',
           },
           '100%': {
@@ -88,17 +95,24 @@ module.exports = {
             'letter-spacing': '0.25em',
             opacity: '0',
           },
-          '25%': {
+          '15%': {
             'line-height': '0%',
             opacity: '0%',
           },
-          '80%': {
+          '60%': {
             opacity: '100%',
           },
-
           '100%': {
             'line-height': '100%',
             opacity: '100%',
+          },
+        },
+        glow: {
+          '0%': {
+            opacity: '0.5',
+          },
+          '100%': {
+            opacity: '1',
           },
         },
       },
