@@ -11,10 +11,8 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        naktor: {
-          primary: '#5b08e4',
-          secondary: '#e338fc',
-        },
+        primary: '#5b08e4',
+        secondary: '#e338fc',
       },
       typography: {
         DEFAULT: {

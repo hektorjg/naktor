@@ -1,8 +1,8 @@
-import createMDX from '@next/mdx'
-import remarkGfm from 'remark-gfm'
-import rehypeSlug from 'rehype-slug'
-import rehypeAutolinkHeadings from 'rehype-autolink-headings'
-import rehypePrettyCode from 'rehype-pretty-code'
+import createMDX from '@next/mdx';
+import rehypeAutolinkHeadings from 'rehype-autolink-headings';
+import rehypePrettyCode from 'rehype-pretty-code';
+import rehypeSlug from 'rehype-slug';
+import remarkGfm from 'remark-gfm';
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
@@ -10,7 +10,7 @@ const nextConfig = {
   experimental: {
     mdxRs: true,
   },
-}
+};
 
 const withMDX = createMDX({
   options: {
@@ -47,6 +47,6 @@ const withMDX = createMDX({
       ],
     ],
   },
-})
+});
 
-export default withMDX(nextConfig)
+export default withMDX(nextConfig);

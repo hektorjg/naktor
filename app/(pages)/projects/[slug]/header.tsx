@@ -3,6 +3,7 @@ import { ArrowLeft, Github, Twitter } from 'lucide-react';
 import Link from 'next/link';
 import type React from 'react';
 import { useEffect, useRef, useState } from 'react';
+import Logo from '../../components/logo';
 
 type Props = {
   project: {
@@ -51,13 +52,60 @@ export const Header: React.FC<Props> = ({ project }) => {
             : 'border-zinc-200 bg-white/10 lg:border-transparent'
         }`}
       >
-        <div className="container mx-auto flex flex-row-reverse items-center justify-between p-6">
+        <div className="container mx-auto flex items-center justify-between p-6">
+          <Link className="ml-4 flex items-center" href="/">
+            <Logo className="h-20 w-auto max-w-[300px]" />
+          </Link>
+
           <div className="flex justify-between gap-8">
+            <Link
+              className={`duration-200 hover:font-medium ${
+                isIntersecting
+                  ? 'text-zinc-200 hover:text-primary'
+                  : 'text-zinc-600 hover:text-zinc-900'
+              } `}
+              href="/products"
+            >
+              Products
+            </Link>
+            <Link
+              className={`duration-200 hover:font-medium ${
+                isIntersecting
+                  ? 'text-zinc-200 hover:text-primary'
+                  : 'text-zinc-600 hover:text-zinc-900'
+              } `}
+              href="/services"
+            >
+              Services
+            </Link>
+            <Link
+              className={`duration-200 hover:font-medium ${
+                isIntersecting
+                  ? 'text-zinc-200 hover:text-primary'
+                  : 'text-zinc-600 hover:text-zinc-900'
+              } `}
+              href="/team"
+            >
+              Team
+            </Link>
+            <Link
+              className={`duration-200 hover:font-medium ${
+                isIntersecting
+                  ? 'text-zinc-200 hover:text-primary'
+                  : 'text-zinc-600 hover:text-zinc-900'
+              } `}
+              href="/contact"
+            >
+              Contact
+            </Link>
+          </div>
+
+          <div className="mr-4 flex justify-between gap-8">
             <Link href="https://twitter.com/naktor" target="_blank">
               <Twitter
                 className={`h-6 w-6 duration-200 hover:font-medium ${
                   isIntersecting
-                    ? ' text-zinc-400 hover:text-zinc-100'
+                    ? 'text-zinc-200 hover:text-primary'
                     : 'text-zinc-600 hover:text-zinc-900'
                 } `}
               />
@@ -66,23 +114,12 @@ export const Header: React.FC<Props> = ({ project }) => {
               <Github
                 className={`h-6 w-6 duration-200 hover:font-medium ${
                   isIntersecting
-                    ? ' text-zinc-400 hover:text-zinc-100'
+                    ? 'text-zinc-200 hover:text-primary'
                     : 'text-zinc-600 hover:text-zinc-900'
                 } `}
               />
             </Link>
           </div>
-
-          <Link
-            className={`duration-200 hover:font-medium ${
-              isIntersecting
-                ? ' text-zinc-400 hover:text-zinc-100'
-                : 'text-zinc-600 hover:text-zinc-900'
-            } `}
-            href="/projects"
-          >
-            <ArrowLeft className="h-6 w-6 " />
-          </Link>
         </div>
       </div>
       <div className="container relative isolate mx-auto overflow-hidden py-24 sm:py-32">
@@ -91,7 +128,7 @@ export const Header: React.FC<Props> = ({ project }) => {
             <h1 className="font-bold font-display text-4xl text-white tracking-tight sm:text-6xl">
               {project.title}
             </h1>
-            <p className="mt-6 text-lg text-zinc-300 leading-8">
+            <p className="mt-6 text-lg text-zinc-200 leading-8">
               {project.description}
             </p>
           </div>

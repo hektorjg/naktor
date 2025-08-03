@@ -1,6 +1,6 @@
-import { getAllProjects, getProject } from '@/lib/projects';
 import { notFound } from 'next/navigation';
 import { Mdx } from '@/app/components/mdx';
+import { getAllProjects, getProject } from '@/lib/projects';
 import { Header } from './header';
 import './mdx.css';
 
@@ -28,7 +28,6 @@ export default async function PostPage({ params }: Props) {
   if (!project) {
     notFound();
   }
-
 
   return (
     <div className="min-h-screen bg-zinc-50">
