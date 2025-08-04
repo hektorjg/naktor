@@ -1,5 +1,4 @@
 'use client';
-import Link from 'next/link';
 import Logo from './components/logo';
 import { Navigation } from './components/nav';
 import Particles from './components/particles';

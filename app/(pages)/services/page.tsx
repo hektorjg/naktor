@@ -1,12 +1,12 @@
 'use client';
 import {
   ArrowRight,
-  Check,
-  Brain,
-  MessageSquare,
-  FileText,
-  Scale,
   Bot,
+  Brain,
+  Check,
+  FileText,
+  MessageSquare,
+  Scale,
   Sparkles,
 } from 'lucide-react';
 import Link from 'next/link';
@@ -108,8 +108,8 @@ export default function ServicesPage() {
           AI Portfolio
         </h2>
         <p className="mt-6 text-lg text-zinc-200 leading-8">
-          Proven AI solutions transforming business processes across Banking, Insurance, 
-          Retail, Healthcare, and Public Administration.
+          Proven AI solutions transforming business processes across Banking,
+          Insurance, Retail, Healthcare, and Public Administration.
         </p>
       </div>
 
@@ -138,20 +138,27 @@ export default function ServicesPage() {
               <div className="mt-auto border-zinc-700 border-t pt-6">
                 <div className="mb-4">
                   <div className="mb-2">
-                    <p className="text-sm text-zinc-200">Timeline: {service.timeline}</p>
+                    <p className="text-sm text-zinc-200">
+                      Timeline: {service.timeline}
+                    </p>
                   </div>
                   <div className="mb-2">
                     <p className="text-xs text-zinc-300">Industries:</p>
-                    <div className="flex flex-wrap gap-1 mt-1">
+                    <div className="mt-1 flex flex-wrap gap-1">
                       {service.industries.map((industry) => (
-                        <span key={industry} className="bg-zinc-700 text-xs px-2 py-1 rounded text-zinc-200">
+                        <span
+                          className="rounded bg-zinc-700 px-2 py-1 text-xs text-zinc-200"
+                          key={industry}
+                        >
                           {industry}
                         </span>
                       ))}
                     </div>
                   </div>
                   {service.caseStudy && (
-                    <p className="text-xs text-primary">Case Study: {service.caseStudy}</p>
+                    <p className="text-primary text-xs">
+                      Case Study: {service.caseStudy}
+                    </p>
                   )}
                 </div>
 
@@ -175,8 +182,9 @@ export default function ServicesPage() {
               Custom AI Solutions
             </h3>
             <p className="mx-auto mb-6 max-w-2xl text-zinc-200">
-              Ready to transform your business with AI? We specialize in creating
-              custom AI solutions tailored to your specific industry and business needs.
+              Ready to transform your business with AI? We specialize in
+              creating custom AI solutions tailored to your specific industry
+              and business needs.
             </p>
             <Link
               className="inline-flex items-center gap-2 rounded-lg bg-white px-6 py-3 font-medium text-black transition-colors hover:bg-zinc-200"

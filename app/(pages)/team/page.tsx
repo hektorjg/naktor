@@ -9,11 +9,11 @@ const team = [
     role: 'CEO',
     bio: '15+ years in software development with specialization in Cloud + Data/Analytics + AI since 2014. Experience in innovation, research, and operational environments as a deep tech company executive.',
     achievements: [
-      'International experience (ES, SW, USA, BR)', 
+      'International experience (ES, SW, USA, BR)',
       'Multiple public interventions: AWS Summit, Big Data London',
       'Professor at URJC Data Science Master (DSLab)',
       'Patents in 5G and Cloud technologies',
-      'Successful implementations in Banking, Insurance, Retail, Healthcare, Telco, and Public Administration'
+      'Successful implementations in Banking, Insurance, Retail, Healthcare, Telco, and Public Administration',
     ],
     image: '/team/placeholder.jpg',
     social: {
@@ -23,14 +23,14 @@ const team = [
   },
   {
     name: '[Name]',
-    role: 'CTO', 
+    role: 'CTO',
     bio: '12+ years in software development as Software Lead in generative AI product development. Full-stack engineering with expertise across multiple programming languages.',
     achievements: [
       'Open source contributor and committer',
       'EMBA Candidate 2026',
       'Technical blogger & writer',
       'Top 1% Cursor developer',
-      'Led successful Data & AI projects in Banking, Insurance, and Retail'
+      'Led successful Data & AI projects in Banking, Insurance, and Retail',
     ],
     image: '/team/placeholder.jpg',
     social: {
@@ -49,7 +49,8 @@ export default function TeamPage() {
           Meet Our Team
         </h2>
         <p className="mt-6 text-lg text-zinc-200 leading-8">
-          Experienced leaders with 25+ combined years in AI, cloud technologies, and enterprise software development.
+          Experienced leaders with 25+ combined years in AI, cloud technologies,
+          and enterprise software development.
         </p>
       </div>
 
@@ -70,10 +71,12 @@ export default function TeamPage() {
 
               {person.achievements && (
                 <div className="mt-6 w-full">
-                  <h4 className="text-sm font-medium text-white mb-3">Key Achievements</h4>
+                  <h4 className="mb-3 font-medium text-sm text-white">
+                    Key Achievements
+                  </h4>
                   <ul className="space-y-2 text-xs text-zinc-300">
                     {person.achievements.map((achievement, index) => (
-                      <li key={index} className="flex items-start">
+                      <li className="flex items-start" key={index}>
                         <span className="mr-2 text-primary">•</span>
                         <span>{achievement}</span>
                       </li>
@@ -83,16 +86,7 @@ export default function TeamPage() {
               )}
 
               <div className="mt-6 flex gap-4">
-                {person.social.twitter && (
-                  <Link
-                    className="text-zinc-200 transition-colors hover:text-primary"
-                    href={person.social.twitter}
-                    target="_blank"
-                  >
-                    <Twitter size={20} />
-                  </Link>
-                )}
-                {person.social.linkedin && (
+                {'linkedin' in person.social && person.social.linkedin && person.social.linkedin !== '#' && (
                   <Link
                     className="text-zinc-200 transition-colors hover:text-primary"
                     href={person.social.linkedin}
@@ -101,7 +95,7 @@ export default function TeamPage() {
                     <Linkedin size={20} />
                   </Link>
                 )}
-                {person.social.github && (
+                {'github' in person.social && person.social.github && person.social.github !== '#' && (
                   <Link
                     className="text-zinc-200 transition-colors hover:text-primary"
                     href={person.social.github}

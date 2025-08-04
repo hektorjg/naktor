@@ -68,7 +68,8 @@ export default function ProductsPage() {
           Our Products
         </h2>
         <p className="mt-6 text-lg text-zinc-200 leading-8">
-          Live AI products showcasing our expertise in healthcare, developer tools, and sales automation.
+          Live AI products showcasing our expertise in healthcare, developer
+          tools, and sales automation.
         </p>
       </div>
 
